@@ -29,15 +29,43 @@
 # ))((((( also results in floor 3.
 # ()) and ))( both result in floor -1 (the first basement level).
 # ))) and )())()) both result in floor -3.
+#
 # To what floor do the instructions take Santa?
 
 
 def floor_calculator_part1(input: str):
-    result: int = 0
-    for element in input:
-        match element:
+    floor: int = 0
+    for character in input:
+        match character:
             case "(":
-                result += 1
+                floor += 1
             case ")":
-                result -= 1
-    return result
+                floor -= 1
+    return floor
+
+
+# --- Part Two ---
+# Now, given the same instructions, find the position of the first character
+# that causes him to enter the basement (floor -1). The first character in the
+# instructions has position 1, the second character has position 2, and so on.
+#
+# For example:
+#
+# ) causes him to enter the basement at character position 1.
+# ()()) causes him to enter the basement at character position 5.
+#
+# What is the position of the character that causes Santa to first enter the
+# basement?
+
+
+def floor_calculator_part2(input: str):
+    floor: int = 0
+    for character in range(0, len(input)):
+        match input[character]:
+            case "(":
+                floor += 1
+            case ")":
+                floor -= 1
+
+        if floor == -1:
+            return character + 1
