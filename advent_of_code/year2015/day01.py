@@ -32,8 +32,8 @@
 # To what floor do the instructions take Santa?
 
 
-def floor_calculator(input: str):
-    result = 0
+def floor_calculator_part1(input: str):
+    result: int = 0
     for element in input:
         match element:
             case "(":
