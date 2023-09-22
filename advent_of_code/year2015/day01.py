@@ -33,8 +33,8 @@
 # To what floor do the instructions take Santa?
 
 
-def floor_calculator_part1(input: str):
-    floor: int = 0
+def floor_calculator_part1(input: str) -> int:
+    floor = 0
     for character in input:
         match character:
             case "(":
@@ -58,8 +58,8 @@ def floor_calculator_part1(input: str):
 # basement?
 
 
-def floor_calculator_part2(input: str):
-    floor: int = 0
+def floor_calculator_part2(input: str) -> int:
+    floor = 0
     for character in range(0, len(input)):
         match input[character]:
             case "(":
