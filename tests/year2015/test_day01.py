@@ -22,9 +22,9 @@ def test_input_part1():
 
 
 def test_examples_part2():
-    assert sut.floor_calculator_part1(")") == 1
+    assert sut.floor_calculator_part2(")") == 1
 
-    assert sut.floor_calculator_part1("()())") == 5
+    assert sut.floor_calculator_part2("()())") == 5
 
 
 def test_input_part2():
